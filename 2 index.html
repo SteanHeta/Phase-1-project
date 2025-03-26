@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
     <header>
         <h1>Artists Section</h1>
     </header>
-</head>
-<body>
     <h1 id="artistName"></h1>
-    <img id="artistImage" width="200px" onclick="artistRate()">
+    <img id="artistImage" width="200px" alt="Artist Image" onclick="artistRate()">
     <p id="artistDescription"></p>
     <p id="artistGenre"></p>
     <p id="artistPopularity"></p>
     <label for="artistRating">Rate the artist (1-10): </label>
     <input type="number" id="artistRating" min="1" max="10">
-    <button onclick="submitRatingReview">Submit Ratting</button>
+    <button onclick="submitRatingReview()">Submit Rating</button>
     <ul id="artistSongs"></ul>
     <br>
     <a href="index.html">⬅ Remedy of the Soul </a>

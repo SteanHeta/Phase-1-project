@@ -22,9 +22,9 @@ function setUpArtistPortfolio(artists) {
 const searchSongs = document.getElementById("searchSongs");
 if(searchSongs) {
     searchSongs.addEventListener("input", () => {
-        let query = searchSongs.value();
+        let query = searchSongs.value;
         document.querySelectorAll(".artist-site").forEach(site =>{
-            site.display = site.textContent
+            site.style.display = site.textContent.toLowerCase().includes(query.toLowerCase()) ? "" : "none";
         });
     });
 }
@@ -34,23 +34,24 @@ if(genreFilter) {
     genreFilter.addEventListener("change", () => {
         let genre = genreFilter.value;
         document.querySelectorAll(".artist-site").forEach(site =>{ 
-            site.display = site.textContent
+            site.style.display = site.textContent.toLowerCase().includes(query.toLowerCase()) ? "" : "none";
+            
         });
     });
 }
 
 const backgroundMusic = document.getElementById("backgroundMusic")
 if(backgroundMusic) {
-    backgroundMusic.addEventListener("Done", () => {
+    backgroundMusic.addEventListener("ended", () => {
         backgroundMusic.play();
     });
 }
 
 function viewArtist(id) {
-    window.location.href = `2 index.html? artist=${id}`;
+    window.location.href = `2 index.html?artist=${id}`;
 }
 
-const saveSongBtn = document.getElementById("saveSongsBtn");
+const saveSongsBtn = document.getElementById("saveSongsBtn");
 if(saveSongsBtn) {
     saveSongsBtn.addEventListener("click", savePlayingSong);
 }
@@ -62,23 +63,23 @@ function savePlayingSong() {
 
     let saveSongsBtn = JSON.parse(localStorage.getItem("savedSongsBtn")) || [];
     saveSongsBtn.push({title, audioUrl, videoUrl});
-    localStorage.getItem("savedSongsBtn", JSON.stringify(saveDSongsBtn));
+    localStorage.getItem("savedSongsBtn", JSON.stringify(savedSongsBtn));
     loadSavedSongs();
 }
 
 function playSong(url) {
-    if(backgroundMusic) return;
+    if(!backgroundMusic) return;
     backgroundMusic.src = url;
     backgroundMusic.play();
 }
 
 function loadArtistSection(artists) {
     let artistid = new URLSearchParams(window.location.search).get("artist");
-    let artist = artist.find(a => a.id === artistid);
+    let artist = artists.find(a => a.id === artistid);
     if(!artist) return;
 
     document.getElementById("artistName").textContent = artist.name;
-    document.getElementById("artistImage").tsrc =`images/${artist.image}`;
+    document.getElementById("artistImage").src =`images/${artist.image}`;
     document.getElementById("artistGenre").textContent = `Genre/${artist.genre}`;
     document.getElementById("artistPopularity").textContent = `Popularity/${artist.popularity}`;
     document.getElementById("artistDescription").textContent = artist.description;
