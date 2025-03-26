@@ -11,23 +11,22 @@
                 {
                     "id":1,
                     "title":"Gin and Juice",
-                    "video_url": "https://www.youtube.com/watch?v=fWCZse1iwE0",
-                    "audio_url": "https://audiomack.com/snoop-dogg/song/gin-juice-aol-sessions-1"
-                    
+                    "video_url": "https://www.youtube.com/watch?v=fWCZse1iwE0"
+
                 },
                 {
                 
                    "id":2,
                     "title":"Drop it like its hot",
-                    "video_url": "https://www.youtube.com/watch?v=GtUVQei3nX4",
-                    "audio_url": "https://audiomack.com/slot-a/song/snoop-dogg-drop-it-like-its-hot-slot-a-remix"
+                    "video_url": "https://www.youtube.com/watch?v=GtUVQei3nX4"
+
                 }, 
                 {
                 
                     "id":3,
                      "title":"Who am i",
-                     "video_url": "https://www.youtube.com/watch?v=2soGJXQAQec",
-                     "audio_url": "https://audiomack.com/snoop-dogg/song/who-am-i-whats-my-name"
+                     "video_url": "https://www.youtube.com/watch?v=2soGJXQAQec"
+                     
                  }
             ]
         },
@@ -42,22 +41,22 @@
                 {
                     "id":1,
                     "title":"God's plan",
-                    "video_url": "https://www.youtube.com/watch?v=xpVfcZ0ZcFM",
-                    "audio_url": "https://audiomack.com/drake/song/gods-plan"
+                    "video_url": "https://www.youtube.com/watch?v=xpVfcZ0ZcFM"
+                    
                 },
                 {
                 
                    "id":2,
                     "title":"One dance",
-                    "video_url": "https://www.youtube.com/watch?v=qL7zrWcv6XY",
-                    "audio_url": "https://audiomack.com/drake/song/one-dance"
+                    "video_url": "https://www.youtube.com/watch?v=qL7zrWcv6XY"
+                    
                 }, 
                 {
                 
                     "id":3,
                      "title":"Hotline bling",
-                     "video_url": "https://www.youtube.com/watch?v=uxpDa-c-4Mc",
-                     "audio_url": "https://audiomack.com/drake/song/hotline-bling"
+                     "video_url": "https://www.youtube.com/watch?v=uxpDa-c-4Mc"
+                    
                  }
             ]
         },
@@ -72,22 +71,22 @@
                 {
                     "id":1,
                     "title":"Humble",
-                    "video_url": "https://www.youtube.com/watch?v=tvTRZJ-4EyI",
-                    "audio_url": "https://audiomack.com/slayerdane/song/humble"
+                    "video_url": "https://www.youtube.com/watch?v=tvTRZJ-4EyI"
+                    
                 },
                 {
                 
                    "id":2,
                     "title":"DNA",
-                    "video_url": "https://www.youtube.com/watch?v=NLZRYQMLDW4",
-                    "audio_url": "https://audiomack.com/kendricklamar/song/dna"
+                    "video_url": "https://www.youtube.com/watch?v=NLZRYQMLDW4"
+                    
                 }, 
                 {
                 
                     "id":3,
                      "title":"Alright",
-                     "video_url": "https://www.youtube.com/watch?v=Z-48u_uWMHY&pp=ygUWYWxyaWdodCBrZW5kcmljayBsYW1hcg%3D%3D",
-                     "audio_url": "https://audiomack.com/kendricklamar/song/alright"
+                     "video_url": "https://www.youtube.com/watch?v=Z-48u_uWMHY&pp=ygUWYWxyaWdodCBrZW5kcmljayBsYW1hcg%3D%3D"
+                    
                  }
             ]
         },
@@ -102,22 +101,22 @@
                 {
                     "id":1,
                     "title": "We found love",
-                    "video_url": "https://www.youtube.com/watch?v=tg00YEETFzg&pp=ygUNd2UgZm91bmQgbG92ZQ%3D%3D",
-                    "audio_url": "https://audiomack.com/rihanna/song/we-found-love-album-version"
+                    "video_url": "https://www.youtube.com/watch?v=tg00YEETFzg&pp=ygUNd2UgZm91bmQgbG92ZQ%3D%3D"
+                    
                 },
                 {
                 
                    "id":2,
                     "title":"Diamonds",
-                    "video_url": "https://www.youtube.com/watch?v=lWA2pjMjpBs&pp=ygUIZGlhbW9uZHM%3D",
-                    "audio_url": "https://audiomack.com/rihanna/song/diamonds"
+                    "video_url": "https://www.youtube.com/watch?v=lWA2pjMjpBs&pp=ygUIZGlhbW9uZHM%3D"
+                   
                 }, 
                 {
                 
                     "id":3,
                      "title":"Umbrella",
-                     "video_url": "https://www.youtube.com/watch?v=CvBfHwUxHIk&pp=ygUQdW1icmVsbGEgcmloYW5uYQ%3D%3D",
-                     "audio_url": "https://audiomack.com/rihanna/song/umbrella"
+                     "video_url": "https://www.youtube.com/watch?v=CvBfHwUxHIk&pp=ygUQdW1icmVsbGEgcmloYW5uYQ%3D%3D"
+                     
                  }
             ]
         },
@@ -132,22 +131,22 @@
                 {
                     "id":1,
                     "title":"Blinding lights",
-                    "video_url": "https://www.youtube.com/watch?v=4NRXx6U8ABQ&pp=ygUaYmxpbmRpbmcgbGlnaHRzIHRoZSB3ZWVrbmQ%3D",
-                    "audio_url": "https://audiomack.com/the-weeknd/song/blinding-lights"
+                    "video_url": "https://www.youtube.com/watch?v=4NRXx6U8ABQ&pp=ygUaYmxpbmRpbmcgbGlnaHRzIHRoZSB3ZWVrbmQ%3D"
+                   
                 },
                 {
                 
                    "id":2,
                     "title":"Save your tears",
-                    "video_url": "https://www.youtube.com/watch?v=XXYlFuWEuKI&pp=ygUac2F2ZSB5b3VyIHRlYXJzIHRoZSB3ZWVrbmQ%3D",
-                    "audio_url": "https://audiomack.com/the-weeknd/song/save-your-tears"
+                    "video_url": "https://www.youtube.com/watch?v=XXYlFuWEuKI&pp=ygUac2F2ZSB5b3VyIHRlYXJzIHRoZSB3ZWVrbmQ%3D"
+                    
                 }, 
                 {
                 
                     "id":3,
                      "title":"Starboy",
-                     "video_url": "https://www.youtube.com/watch?v=34Na4j8AVgA&pp=ygUSc3RhcmJveSB0aGUgd2Vla25k",
-                     "audio_url": "https://audiomack.com/24j7tjqfhh/song/starboy"
+                     "video_url": "https://www.youtube.com/watch?v=34Na4j8AVgA&pp=ygUSc3RhcmJveSB0aGUgd2Vla25k"
+                     
                  }
             ]
         },
@@ -162,22 +161,22 @@
                 {
                     "id":1,
                     "title":"Under the influence",
-                    "video_url": "https://www.youtube.com/watch?v=pfxyk1glEq4&pp=ygUfdW5kZXIgdGhlIGluZmx1ZW5jZSBjaHJpcyBicm93bg%3D%3D",
-                    "audio_url": "https://audiomack.com/dewayne-xander/song/under-the-influence"
+                    "video_url": "https://www.youtube.com/watch?v=pfxyk1glEq4&pp=ygUfdW5kZXIgdGhlIGluZmx1ZW5jZSBjaHJpcyBicm93bg%3D%3D"
+                    
                 },
                 {
                 
                    "id":2,
                     "title":"Forever",
-                    "video_url": "https://www.youtube.com/watch?v=5sMKX22BHeE&pp=ygUTZm9yZXZlciBjaHJpcyBicm93bg%3D%3D",
-                    "audio_url": "https://audiomack.com/doneagain/song/forever-in-the-style-of-chris-brown-performance-track-with-demonstration-vo-1"
+                    "video_url": "https://www.youtube.com/watch?v=5sMKX22BHeE&pp=ygUTZm9yZXZlciBjaHJpcyBicm93bg%3D%3D"
+                    
                 }, 
                 {
                 
                     "id":3,
                      "title":"With You",
-                     "video_url": "https://www.youtube.com/watch?v=nmjdaBaZe8Y&pp=ygUUd2l0aCB5b3UgY2hyaXMgYnJvd24%3D",
-                     "audio_url": "https://audiomack.com/doneagain/song/with-you"
+                     "video_url": "https://www.youtube.com/watch?v=nmjdaBaZe8Y&pp=ygUUd2l0aCB5b3UgY2hyaXMgYnJvd24%3D"
+                    
                  }
             ]
         },
@@ -192,22 +191,22 @@
                 {
                     "id":1,
                     "title":"Temperature",
-                    "video_url": "https://www.youtube.com/watch?v=dW2MmuA1nI4&pp=ygUVdGVtcGVyYXR1cmUgc2VhbiBwYXVs",
-                    "audio_url": "https://audiomack.com/jack-cox-1/song/temperature"
+                    "video_url": "https://www.youtube.com/watch?v=dW2MmuA1nI4&pp=ygUVdGVtcGVyYXR1cmUgc2VhbiBwYXVs"
+                    
                 },
                 {
                 
                    "id":2,
                     "title":"Get busy",
-                    "video_url": "https://www.youtube.com/watch?v=oPQ3o14ksaM&pp=ygUSZ2V0IGJ1c3kgc2VhbiBwYXVs0gcJCb0Ag7Wk3p_U",
-                    "audio_url": "https://audiomack.com/goodmusicupload/song/get-busy"
+                    "video_url": "https://www.youtube.com/watch?v=oPQ3o14ksaM&pp=ygUSZ2V0IGJ1c3kgc2VhbiBwYXVs0gcJCb0Ag7Wk3p_U"
+                    
                 }, 
                 {
                 
                     "id":3,
                      "title":"She doen't mind",
-                     "video_url": "https://www.youtube.com/watch?v=SbUBMklQSVU&pp=ygUgc2VhbiBwYXVsIHNoZSBkb2VzbnQgbWluZCBseXJpY3M%3D",
-                     "audio_url": "https://audiomack.com/sean-paul/song/she-doesnt-mind-0274085"
+                     "video_url": "https://www.youtube.com/watch?v=SbUBMklQSVU&pp=ygUgc2VhbiBwYXVsIHNoZSBkb2VzbnQgbWluZCBseXJpY3M%3D"
+                    
                  }
             ]
         },
@@ -222,22 +221,22 @@
                 {
                     "id":1,
                     "title":"Hit and Run",
-                    "video_url": "https://www.youtube.com/watch?v=rJwEphsNVH8&pp=ygULaGl0IGFuZCBydW4%3D",
-                    "audio_url": "https://audiomack.com/jaguarsbob1/song/masicka-ft-shenseea-hit-and-run"
+                    "video_url": "https://www.youtube.com/watch?v=rJwEphsNVH8&pp=ygULaGl0IGFuZCBydW4%3D"
+                   
                 },
                 {
                 
                    "id":2,
                     "title":"Rebel",
-                    "video_url": "https://www.youtube.com/watch?v=Od4QdGa7I20&pp=ygUOcmViZWwgc2hlbnNlZWE%3D",
-                    "audio_url": "https://audiomack.com/dj-tawchup/song/rebel"
+                    "video_url": "https://www.youtube.com/watch?v=Od4QdGa7I20&pp=ygUOcmViZWwgc2hlbnNlZWE%3D"
+                   
                 }, 
                 {
                 
                     "id":3,
                      "title":"Loodi",
-                     "video_url": "https://www.youtube.com/watch?v=50jyn6_rLFA&pp=ygUObG9vZGkgc2hlbnNlZWE%3D",
-                     "audio_url": "https://audiomack.com/lswh0re/song/loodi-sped-up"
+                     "video_url": "https://www.youtube.com/watch?v=50jyn6_rLFA&pp=ygUObG9vZGkgc2hlbnNlZWE%3D"
+                     
                  }
             ]
         },
@@ -252,22 +251,22 @@
                 {
                     "id":1,
                     "title":"Fever",
-                    "video_url": "https://www.youtube.com/watch?v=Yw-8dD_6MmY&pp=ygURZmV2ZXIgdnlieiBrYXJ0ZWw%3D",
-                    "audio_url": "https://audiomack.com/vybzkartel/song/fever-1"
+                    "video_url": "https://www.youtube.com/watch?v=Yw-8dD_6MmY&pp=ygURZmV2ZXIgdnlieiBrYXJ0ZWw%3D"
+                   
                 },
                 {
                 
                    "id":2,
                     "title":"Summertime",
-                    "video_url": "https://www.youtube.com/watch?v=CITU4KH93aU&pp=ygUXc3VtbWVyIHRpbWUgdnlieiBrYXJ0ZWw%3D",
-                    "audio_url": "https://audiomack.com/tads-records/song/summertime"
+                    "video_url": "https://www.youtube.com/watch?v=CITU4KH93aU&pp=ygUXc3VtbWVyIHRpbWUgdnlieiBrYXJ0ZWw%3D"
+                    
                 }, 
                 {
                 
                     "id":3,
                      "title":"Wine to the top",
-                     "video_url": "https://www.youtube.com/watch?v=uxq-S07Rc9U&pp=ygUid2luZSB0byB0aGUgdG9wIHZ5Ynoga2FydGVsIGx5cmljcw%3D%3D",
-                     "audio_url": "https://audiomack.com/platinum-kids/song/wine-to-the-top-raw"
+                     "video_url": "https://www.youtube.com/watch?v=uxq-S07Rc9U&pp=ygUid2luZSB0byB0aGUgdG9wIHZ5Ynoga2FydGVsIGx5cmljcw%3D%3D"
+                    
                  }
             ]
         }
