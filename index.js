@@ -1,12 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
+    fetchData();
+});
+function fetchData() {
     fetch("db.json")
     .then(res => res.json())
     .then(data => {
-        document.getElementById("artistConsole") ? setUpArtistPortfolio(data.artists) : loadArtistSection(data.artists);
+      if (document.getElementById("artistConsole")) {
+        setUpArtistPortfolio(data.artists);
+      }else {
+        loadArtistSection(data.artists);
+      }
         loadRanking(data.artists);
         loadSavedSongs();
-    });
-});
+    })
+    .catch(error => console.error("Error fetching info", error));
+}
 
 function setUpArtistPortfolio(artists) {
     const artistConsole = document.getElementById("artistConsole");
