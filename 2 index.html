@@ -11,25 +11,34 @@
     <header>
         <h1>Artists Section</h1>
     </header>
-    <h1 id="artistName"></h1>
-    <img id="artistImage" width="200px" alt="Artist Image" onclick="artistRate()">
-    <p id="artistDescription"></p>
-    <p id="artistGenre"></p>
-    <p id="artistPopularity"></p>
-    <label for="artistRating">Rate the artist (1-10): </label>
-    <input type="number" id="artistRating" min="1" max="10">
-    <button onclick="submitRatingReview()">Submit Rating</button>
-    <button class="song-btn audio" data-url="${song.audio_url}">Play Audio</button>
-    <button class="song-btn video" data-url="${song.video_url}">Play Video</button>
-    <button class="song-btn save" 
-        data-title="${song.title}" 
-        data-audio="${song.audio_url}" 
-        data-video="${song.video_url}">Save</button>
 
-    <ul id="artistSongs"></ul>
+    <main class="artists-info"></main>
+        <div class="artist-intro"></div>
+            <img id="artistImage" class="artist-main-image">
+            <div class="artist-info"></div>
+                <h1 id="artistName"></h1>
+                <p id="artistDescription" class="description"></p>
+                <p id="artistGenre" class="genre"></p>
+                <p id="artistPopularity" class="popularity"></p>
+            </div>
+        </div>
+        
+        <div class="rating-section"></div>
+            <label for="artistRating">Rate the artist (1-10): </label>
+            <input type="number" id="artistRating" min="1" max="10">
+            <button onclick="submitRatingReview()">Submit Rating</button>
+        </div> 
+        <div class="artist-songs">
+            <h2>Songs</h2>
+            <ul id="artistsSongs" class="song-list"></ul>
+        </div>
+    
     <br>
-    <a href="index.html">⬅ Remedy of the Soul </a>
+    <a href="index.html">⬅ Back to artists </a>
+</main>
+
+ <audio id="audioPlayer"></audio>
+    <script src="index.js"></script>
     
 </body>
-<script src="index.js"></script>
 </html>
