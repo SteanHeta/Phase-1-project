@@ -2,22 +2,32 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchData();
 });
 function fetchData() {
-    fetch("db.json")
-    .then(res => res.json())
+    fetch("http://localhost:3000/artists")
+    .then(res => {
+        if(!res.ok) {
+            throw new Error('Network not responding')
+        }
+       return res.json();
+ })
+
     .then(data => {
       if (document.getElementById("artistConsole")) {
-        setUpArtistPortfolio(data.artists);
-      }else {
-        loadArtistSection(data.artists);
-      }
-        loadRanking(data.artists);
+        setUpArtistPortfolio(data);
+        setupEventListeners();
+        loadRanking(data);
         loadSavedSongs();
+      }else if (document.getElementById("artistName")){
+        loadArtistSection(data);
+      }
+        
     })
-    .catch(error => console.error("Error fetching info", error));
+    .catch(error => {console.error("Error fetching info", error);
+});
 }
 
 function setUpArtistPortfolio(artists) {
     const artistConsole = document.getElementById("artistConsole");
+    if (!artistConsole) return;
     artistConsole.innerHTML = artists.map(artist => `
        <div class="artist-site">
        <h2>${artist.name}</h2>
@@ -27,12 +37,13 @@ function setUpArtistPortfolio(artists) {
        </div>`).join("");
 }
 
+function setupEventListeners () {
 const searchSongs = document.getElementById("searchSongs");
 if(searchSongs) {
     searchSongs.addEventListener("input", () => {
-        let query = searchSongs.value;
-        document.querySelectorAll(".artist-site").forEach(site =>{
-            site.style.display = site.textContent.toLowerCase().includes(query.toLowerCase()) ? "" : "none";
+        const query = searchSongs.value.toLowerCase();
+        document.querySelectorAll(".artist-site").forEach(site => {
+            site.style.display = site.textContent.toLowerCase().includes(query) ? "" : "none";
         });
     });
 }
@@ -40,12 +51,13 @@ if(searchSongs) {
 const genreFilter = document.getElementById("genreFilter");
 if(genreFilter) {
     genreFilter.addEventListener("change", () => {
-        let genre = genreFilter.value;
+        const genre = genreFilter.value.toLowerCase();
         document.querySelectorAll(".artist-site").forEach(site =>{ 
-            site.style.display = site.textContent.toLowerCase().includes(query.toLowerCase()) ? "" : "none";
+            site.style.display = genre === "" || site.textContent.toLowerCase().includes(genre) ? "" : "none";
             
         });
     });
+}
 }
 
 const backgroundMusic = document.getElementById("backgroundMusic")
@@ -69,41 +81,93 @@ function savePlayingSong() {
     let videoUrl = document.getElementById("playingSongVideo")?.src;
     if(!title || !audioUrl || !videoUrl) return;
 
-    let saveSongsBtn = JSON.parse(localStorage.getItem("savedSongsBtn")) || [];
+    let savedSongs = JSON.parse(localStorage.getItem("savedSongsBtn")) || [];
     saveSongsBtn.push({title, audioUrl, videoUrl});
-    localStorage.getItem("savedSongsBtn", JSON.stringify(savedSongsBtn));
+    localStorage.setItem("savedSongsBtn", JSON.stringify(savedSongsBtn));
     loadSavedSongs();
 }
 
 function playSong(url) {
-    if(!backgroundMusic) return;
-    backgroundMusic.src = url;
-    backgroundMusic.play();
+    const backgroundMusic = document.getElementById("backgroundPlay")
+    if(!backgroundPlay) return;
+    backgroundPlay.src = url;
+    backgroundPlay.play();
 }
 
 function loadArtistSection(artists) {
     let artistid = new URLSearchParams(window.location.search).get("artist");
-    let artist = artists.find(a => a.id === artistid);
+    let artist = artists.find(a => a.id.toString() === artistid);
     if(!artist) return;
 
     document.getElementById("artistName").textContent = artist.name;
-    document.getElementById("artistImage").src =`images/${artist.image}`;
-    document.getElementById("artistGenre").textContent = `Genre/${artist.genre}`;
-    document.getElementById("artistPopularity").textContent = `Popularity/${artist.popularity}`;
-    document.getElementById("artistDescription").textContent = artist.description;
-    document.getElementById("artistSongs").innerHTML = artist.songs.map(song => `
+    document.getElementById("artistImage").src =artist.image;
+    document.getElementById("artistGenre").textContent = `Genre: ${artist.genre}`;
+    document.getElementById("artistPopularity").textContent = `Popularity: ${artist.popularity}`;
+    document.getElementById("artistDescription").textContent = artist.description || '';
+    const songsQueue = document.getElementById("artistSongs");
+    if (songsQueue) {
+    songsQueue.innerHTML = artist.songs.map(song => `
         <li>
         <p>${song.title}</p>
         <button onclick="playSong('${song.audio_url}')">Play audio</button>
          <button onclick="playSong('${song.video_url}')">Play video</button>
-         <button onclick="savePlayinSong()">Save</button>
+         <button onclick="savePlayinSong('${song.title}', '${song.audio_url}', '${song.video_url}')">Save</button>
          </li>
          `).join("");
+    }
 }
 
 function loadSavedSongs() {
-    let savedSongsBtn = JSON.parse(localStorage.getItem("savedSongsBtn")) || [];
-    const savedSongsBtnList = document.getElementById("savedSongsBtnList");
-    if(!savedSongsBtnList) return;
-    savedSongsBtnList.innerHTML = savedSongsBtn.map(song => `<li>${song.title}</li>`).join("");
+    let savedSongs = JSON.parse(localStorage.getItem("savedSongs")) || [];
+    const savedSongsList = document.getElementById("savedSongs");
+    if(!savedSongsList) return;
+    savedSongsList.innerHTML = savedSongs.map(song => `
+        <li>
+        ${song.title}
+        <button onclick="playSong('${song.audioUrl}')">Play Audio</button>
+        <button onclick="playSong('${song.videoUrl}')">Play Video</button>
+        </li>`).join("");
+}
+function loadRanking(artists) {
+    const sortedArtists = [...artists].sort((a, b) => b.popularity - a.popularity);
+    
+    const overallRanking = document.getElementById("overallRanking");
+    if (overallRanking) {
+        overallRanking.innerHTML = sortedArtists.slice(0, 3).map(artist => `
+            <div>
+                <h4>${artist.name}</h4>
+                <p>Popularity: ${artist.popularity}</p>
+            </div>
+        `).join("");
+    }
+
+    const genreMap = {};
+    artists.forEach(artist => {
+        if (!genreMap[artist.genre]) {
+            genreMap[artist.genre] = [];
+        }
+        genreMap[artist.genre].push(artist);
+    });
+
+    const genreRanking = document.getElementById("genreRanking");
+    if (genreRanking) {
+        genreRanking.innerHTML = Object.entries(genreMap).map(([genre, artists]) => {
+            const topArtist = artists.sort((a, b) => b.popularity - a.popularity)[0];
+            return `
+                <div>
+                    <h4>${genre}</h4>
+                    <p>Top Artist: ${topArtist.name} (${topArtist.popularity})</p>
+                </div>
+            `;
+        }).join("");
+    }
+}
+
+function submitRatingReview() {
+    const rating = document.getElementById("artistRating").value;
+    if (rating && rating >= 1 && rating <= 10) {
+        alert(`Thank you for rating this artist with ${rating} stars!`);
+    } else {
+        alert("Please enter a valid rating between 1 and 10");
+    }
 }
