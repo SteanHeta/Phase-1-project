@@ -80,11 +80,14 @@ function savePlayingSong() {
     localStorage.setItem("savedSongsBtn", JSON.stringify(savedSongsBtn));
     loadSavedSongs();
 }
-const playAudio = url => (new Audio(url)).play().catch(e=>console.error("Audio error:",e));
-const playVideo = url => window.open(url, '_blank');
 
-
-
+function playVideo(url) {
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
+    window.open(url, '_blank');
+}
 
 function loadArtistSection(artists) {
     let artistid = new URLSearchParams(window.location.search).get("artist");

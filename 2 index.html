@@ -19,6 +19,13 @@
     <label for="artistRating">Rate the artist (1-10): </label>
     <input type="number" id="artistRating" min="1" max="10">
     <button onclick="submitRatingReview()">Submit Rating</button>
+    <button class="song-btn audio" data-url="${song.audio_url}">Play Audio</button>
+    <button class="song-btn video" data-url="${song.video_url}">Play Video</button>
+    <button class="song-btn save" 
+        data-title="${song.title}" 
+        data-audio="${song.audio_url}" 
+        data-video="${song.video_url}">Save</button>
+
     <ul id="artistSongs"></ul>
     <br>
     <a href="index.html">⬅ Remedy of the Soul </a>

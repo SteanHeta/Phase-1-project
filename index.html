@@ -13,28 +13,48 @@
 
     </header>
     <h2>Remedy of the Soul</h2>
+    <main></main>
+    <section class="controls"></section>
+        <div class="search-engine"></div>
+            <label for="genreFilter">Filter using genre:</label>
+            <select id="genreFilter">
+                <option value="">All Genres</option>
+                <option value="Hiphop">Hiphop</option>
+                <option value="RnB">RnB</option>
+                <option value="Dancehall">Dancehall</option>
+            </select>
+            <input type="text" id="searchSongs" placeholder="Search songs or artists of choice">
+        </div>
 
-    <label for="genreFilter">Filter using genre:</label>
-    <select id="genreFilter">
-        <option value="">All Genres</option>
-        <option value="Hiphop">Hiphop</option>
-        <option value="RnB">RnB</option>
-        <option value="Dancehall">Dancehall</option>
-    </select>
-    <input type="text" id="searchSongs" placeholder="Search songs or artists of choice">
-    <h3>Overall top ranking artists</h3>
-    <div id="overallRanking"></div>
-    <h3>Top Artists In Each Genre</h3>
-    <div id="genreRanking"></div>
-    <h3> All Saved Songs</h3>
-    <ul id="savedSongs"></ul>
-    <h3>Artists</h3>
-    <div id="musicPlaylist"></div>
-    <div id="artistConsole"></div>
-    <audio id="backgroundPlay" loop></audio>
-    <br>
+        <div class="ranking-categories">
+    <h2>Top Rank</h>
+    <div class="ranking-site">
+        <div class="ranking-site overall-ranking"></div>
+            <h3>Overall Top 5</h3>
+            <ol id="overallRanking"></ol>
+        </div>
+        <div class="ranking-site genre-ranking">
+            <h3>Top by Genre</h3>
+            <div id="genreranking"></div>
+        </div>
+    </div>
+</div>
+
+    <div class="saved-songs">
+        <h3>Saved Songs</h3>
+        <ul id="savedsongs"></ul>
+    </div>
+</section>
+
+<section class="artists-section">
+<h2>Artists</h2>
+    <div id="artistConsole" class="artists=frame"></div>
+</section>
+</main>
+        
+    <audio id="audioPlayer"></audio>
     <a href="2 index.html">→ Artists Section</a>
+    <script src="index.js"></script>
    
 </body>
-<script src="index.js"></script>
 </html>
