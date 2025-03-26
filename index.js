@@ -30,8 +30,9 @@ function setUpArtistPortfolio(artists) {
     if (!artistConsole) return;
     artistConsole.innerHTML = artists.map(artist => `
        <div class="artist-site">
+       <div class="artist-image-container">
        <h2>${artist.name}</h2>
-       <img src="images/${artist.image}" onclick="viewArtist('${artist.id}')">
+       <img src="${artist.image}" alt="${artist.name}" class="artist-image" onclick="viewArtist('${artist.id}')">
        <p>${artist.description || ''}</p>
        <p>${artist.genre} | Popularity: ${artist.popularity}</p>
        </div>`).join("");
@@ -79,17 +80,11 @@ function savePlayingSong() {
     localStorage.setItem("savedSongsBtn", JSON.stringify(savedSongsBtn));
     loadSavedSongs();
 }
+const playAudio = url => (new Audio(url)).play().catch(e=>console.error("Audio error:",e));
+const playVideo = url => window.open(url, '_blank');
 
 
-function playAudio(url) {
-    if (currentPlaying) {
-        currentPlaying.pause();
-        currentPlaying.currentTime = 0
-    }
-}
-function playVideo(url) {
-    window.open(url, '_blank');
-}
+
 
 function loadArtistSection(artists) {
     let artistid = new URLSearchParams(window.location.search).get("artist");
