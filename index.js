@@ -32,7 +32,7 @@ function setUpArtistPortfolio(artists) {
        <div class="artist-site">
        <h2>${artist.name}</h2>
        <img src="images/${artist.image}" onclick="viewArtist('${artist.id}')">
-       <p>${artist.description}</p>
+       <p>${artist.description || ''}</p>
        <p>${artist.genre} | Popularity: ${artist.popularity}</p>
        </div>`).join("");
 }
@@ -60,13 +60,6 @@ if(genreFilter) {
 }
 }
 
-const backgroundMusic = document.getElementById("backgroundMusic")
-if(backgroundMusic) {
-    backgroundMusic.addEventListener("ended", () => {
-        backgroundMusic.play();
-    });
-}
-
 function viewArtist(id) {
     window.location.href = `2 index.html?artist=${id}`;
 }
@@ -87,11 +80,15 @@ function savePlayingSong() {
     loadSavedSongs();
 }
 
-function playSong(url) {
-    const backgroundMusic = document.getElementById("backgroundPlay")
-    if(!backgroundPlay) return;
-    backgroundPlay.src = url;
-    backgroundPlay.play();
+
+function playAudio(url) {
+    if (currentPlaying) {
+        currentPlaying.pause();
+        currentPlaying.currentTime = 0
+    }
+}
+function playVideo(url) {
+    window.open(url, '_blank');
 }
 
 function loadArtistSection(artists) {
