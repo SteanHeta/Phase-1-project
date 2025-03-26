@@ -6,12 +6,31 @@
     <title>HARMONY HUB</title>
     <link rel="stylesheet" href="style.css">
     <header>
-        <h1>Remedy of the soul</h1>
+        <h1>HARMONY HUB</h1>
+        <h2>Remedy of the Soul</h2>
+
     </header>
 </head>
 <body>
-    
-    
+    <label for="genreFilter">Filter using genre:</label>
+    <select id="genreFilter">
+        <option value="">All Genres</option>
+        <option value="Hiphop">Hiphop</option>
+        <option value="RnB">RnB</option>
+        <option value="Dancehall">Dancehall</option>
+    </select>
+    <input type="text" id="serachSongs" placeholder="Search songs or artists of choice">
+    <h3>Overall top ranking artists</h3>
+    <div id="overallRanking"></div>
+    <h3>Top Artists In Each Genre</h3>
+    <div id="genreRanking"></div>
+    <h3> All Saved Songs</h3>
+    <ul id="savedSongs"></ul>
+    <h3>Artists</h3>
+    <div id="Music Playlist"></div>
+    <div id="aristConsole"></div>
+    <audio id="backgroundPlay" loop></audio>
+   
 </body>
 <script src="index.js"></script>
 </html>

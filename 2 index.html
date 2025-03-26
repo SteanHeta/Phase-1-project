@@ -5,8 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <header>
+        <h1>Artists Section</h1>
+    </header>
 </head>
 <body>
+    <h1 id="artistName"></h1>
+    <img id="artistImage" width="200px" onclick="artistRate()">
+    <p id="artistDescription"></p>
+    <p id="artistGenre"></p>
+    <p id="artistPopularity"></p>
+    <label for="artistRating">Rate the artist (1-10): </label>
+    <input type="number" id="artistRating" min="1" max="10">
+    <button onclick="submitRatingReview">Submit Ratting</button>
+    <ul id="artistSongs"></ul>
     
 </body>
 <script src="index.js"></script>
