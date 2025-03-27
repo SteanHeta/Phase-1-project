@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     fetchData();
 });
+let currentAudio = null;
+
 function fetchData() {
     fetch("http://localhost:3000/artists")
     .then(res => {
@@ -85,13 +87,29 @@ function savePlayingSong() {
     loadSavedSongs();
 }
 
-function playVideo(url) {
+function playSong(videoUrl, title) {
     if (currentAudio) {
         currentAudio.pause();
-        currentAudio.currentTime = 0;
+        currentAudio = null;
     }
-    window.open(url, '_blank');
+
+const nowPlayingElement = document.getElementById("nowPlaying");
+    if (nowPlayingElement) {
+        nowPlayingElement.innerHTML = `
+            <p>Now Playing: <strong>${title}</strong></p>
+            <div class="player-controls">
+                <button onclick="window.open('${videoUrl}', '_blank')">
+                    Watch Video <i class="fas fa-external-link-alt"></i>
+                </button>
+                <button onclick="saveSong('${title.replace(/'/g, "\\'")}', '${videoUrl}')">
+                    Save Song <i class="fas fa-heart"></i>
+                </button>
+            </div>
+        `;
+    }
+
 }
+
 
 function saveSong(title, videoUrl) {
     if (!title || !videoUrl) {
@@ -100,18 +118,53 @@ function saveSong(title, videoUrl) {
     }
     let savedSongs = JSON.parse(localStorage.getItem("savedSongs")) || [];
 
-    if (!savedSongs.some(song => song.title === title)) {
+    const isAlreadySaved = savedSongs.some(song => 
+        song.title === title && song.videoUrl === videoUrl
+    );
+
+    if (!isAlreadySaved) {
         savedSongs.push({
             title: title,
             videoUrl: videoUrl,
+            savedAt: new Date().toISOString()
         });
         localStorage.setItem("savedSongs", JSON.stringify(savedSongs));
-        alert(`the song ${title} successfully saved`);
+        alert(`"${title}" has been saved to your favorites!`);
         loadSavedSongs();
-        } else {
-            alert(`the song ${title} already saved`);
+    } else {
+        alert(`"${title}"  already in favorites!`);
     }
 }
+function loadSavedSongs() {
+    const savedSongsContainer = document.getElementById("savedSongsContainer");
+    if (!savedSongsContainer) return;
+    const savedSongs = JSON.parse(localStorage.getItem("savesSongs")) || [];
+    if (savedSongs.length === 0) {
+        savedSongsContainer.innerHTML = `<p class="no-songs">No songs saved.</p>`;
+        return;
+    }
+    savedSongsContainer.innerHTML =  `
+    <h3>Your Saved Songs (${savedSongs.length})</h3>
+    <ul class="saved-songs-list">
+        ${savedSongs.map((song, index) => `
+            <li>
+                <span class="song-number">${index + 1}.</span>
+                <span class="song-title">${song.title}</span>
+                <div class="song-actions">
+                    <button onclick="playSong('${song.videoUrl}', '${escapeString(song.title)}')">
+                        <i class="fas fa-play"></i> Play
+                    </button>
+                    <button onclick="removeSavedSong(${index})">
+                        <i class="fas fa-trash"></i> Remove
+                    </button>
+                </div>
+            </li>
+        `).join("")}
+    </ul>
+`;
+}
+   
+
 
 function loadArtistSection(artists) {
     let artistid = new URLSearchParams(window.location.search).get("artist");
@@ -126,15 +179,19 @@ function loadArtistSection(artists) {
 
     const songsQueue = document.getElementById("artistSongs");
     if (songsQueue) {
-    songsQueue.innerHTML = artist.songs.map(song => `
-        <li class="song-item>
-            <span class="song-title">${song.title}</span>
-            <div class="song-control">
-                <button class="play-video" onclick="playVideo('${song.video_url}')"></button>
-                 <button class="save-song" onclick="savesong('${escapeString(song.title)}', '${song.video_url}')"></button>
-            </div>
-         </li>
-         `).join("");
+        songsQueue.innerHTML = artist.songs.map(song => `
+            <li class="song-item">
+                <span class="song-title">${song.title}</span>
+                <div class="song-controls">
+                    <button class="play-btn" onclick="playSong('${song.video_url}', '${song.title}')">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="save-btn" onclick="saveSong('${song.title.replace(/'/g, "\\'")}', '${song.video_url}')">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+            </li>
+        `).join("");
     }
 }
 
@@ -142,7 +199,7 @@ function escapeString(str) {
     return str.replace(/'/g, "\\'").replace(/"/g, '&quot;');
 }
 
-function loadRanking(artists) {
+ async function loadRanking(artists) {
     const sortedArtists = [...artists].sort((a, b) => b.popularity - a.popularity);
     
     const overallRanking = document.getElementById("overallRanking");
@@ -151,41 +208,18 @@ function loadRanking(artists) {
             <li>
                 <div class="rank-number">${index + 1}</div>
                 <div class="rank-info">
+                    <div class="rank-image">
+                        <img src="${artist.image}" alt="${artist.name}" class="rank-image" onclick="viewArtist('${artist.id}')">
+                    </div>    
                     <h4>${artist.name}</h4>
                     <p>${artist.genre} • ★ ${artist.popularity}</p>
+                    </div>
                 </div>
-                <img src="${artist.image}" alt="${artist.name}" class="rank-image" onclick="viewArtist('${artist.id}')">
-            </li>
+            <li>   
         `).join("");
     }
 
-    const genreMap = {};
-    artists.forEach(artist => {
-        if (!genreMap[artist.genre]) {
-            genreMap[artist.genre] = [];
-        }
-        genreMap[artist.genre].push(artist);
-    });
-
-    const genreRanking = document.getElementById("genreRanking");
-    if (genreRanking) {
-        genreRanking.innerHTML = Object.entries(genreMap).map(([genre, artists]) => {
-            const topArtist = artists.sort((a, b) => b.popularity - a.popularity)[0];
-            return `
-                 <div class="genre-ranking-item">
-                    <div class="genre-title">${genre}</div>
-                    <div class="artist-rank">
-                        <img src="${topArtist.image}" alt="${topArtist.name}" class="rank-image" onclick="viewArtist('${topArtist.id}')">
-                        <div>
-                            <h4>${topArtist.name}</h4>
-                            <p>★ ${topArtist.popularity}</p>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }).join("");
-    }
-}
+ }
 
 function submitRatingReview() {
     const ratingInput = document.getElementById("artistRating");

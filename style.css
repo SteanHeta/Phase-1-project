@@ -142,3 +142,53 @@ main {
     border-bottom: 2px solid #f8f9fa;
     align-items: center;
 }
+
+ #overallRanking li {
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 3px 5px rgb(25, 163, 25);
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 1rem;
+}
+.rank-number {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-right: 1.5rem;
+    text-align: center;
+    min-width: 35px;
+}
+.rank-info {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+.rank-image {
+    margin-right: 1.5rem;
+}
+.rank-image img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.rank-info h4{
+    color: rgb(63, 39, 9);
+}
+.rank-info p {
+    font-size: 1rem;
+    color: #333;
+}
+#overallRanking li:nth-child(1) .rank-number {
+    color: gold;
+    font-size: 1.4rem;
+}
+
+#overallRanking li:nth-child(2) .rank-number {
+    color: silver;
+}
+
+#overallRanking li:nth-child(3) .rank-number {
+    color: #cd7f32; 
+}
+
