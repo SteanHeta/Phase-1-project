@@ -82,15 +82,15 @@ function playVideo(url) {
     window.open(url, '_blank', 'noopener,noreferrer');
 }
 
-function saveSong(title, audioUrl, videoUrl) {
-    if (!title || !audioUrl || !videoUrl) {
+function saveSong(title, videoUrl) {
+    if (!title || !videoUrl) {
         alert("Missing song information");
         return;
     }
 
     let savedSongs = JSON.parse(localStorage.getItem("savedSongs")) || [];
     
-    if (!savedSongs.some(song => song.title === title && song.audioUrl === audioUrl)) {
+    if (!savedSongs.some(song => song.title === title && song.videoUrl === videoUrl)) {
         savedSongs.push({
             title: title,
             videoUrl: videoUrl,
