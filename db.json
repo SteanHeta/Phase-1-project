@@ -11,22 +11,20 @@
                 {
                     "id":1,
                     "title":"Gin and Juice",
-                    "video_url": "https://www.youtube.com/embed/fWCZse1iwE0"
-
+                    "video_url": "https://www.youtube.com/watch?v=fWCZse1iwE0"
+                    
                 },
                 {
                 
                    "id":2,
                     "title":"Drop it like its hot",
-                    "video_url": "https://www.youtube.com/embed/GtUVQei3nX4"
-
+                    "video_url": "https://www.youtube.com/watch?v=GtUVQei3nX4"
                 }, 
                 {
                 
                     "id":3,
                      "title":"Who am i",
-                     "video_url": "https://www.youtube.com/embed/2soGJXQAQec"
-                     
+                     "video_url": "https://www.youtube.com/watch?v=2soGJXQAQec"
                  }
             ]
         },
@@ -41,22 +39,19 @@
                 {
                     "id":1,
                     "title":"God's plan",
-                    "video_url": "https://www.youtube.com/embed/xpVfcZ0ZcFM"
-                    
+                    "video_url": "https://www.youtube.com/watch?v=xpVfcZ0ZcFM"
                 },
                 {
                 
                    "id":2,
                     "title":"One dance",
-                    "video_url": "https://www.youtube.com/embed/qL7zrWcv6XY"
-                    
+                    "video_url": "https://www.youtube.com/watch?v=qL7zrWcv6XY"
                 }, 
                 {
                 
                     "id":3,
                      "title":"Hotline bling",
-                     "video_url": "https://www.youtube.com/embed/uxpDa-c-4Mc"
-                    
+                     "video_url": "https://www.youtube.com/watch?v=uxpDa-c-4Mc"
                  }
             ]
         },
@@ -72,21 +67,18 @@
                     "id":1,
                     "title":"Humble",
                     "video_url": "https://www.youtube.com/watch?v=tvTRZJ-4EyI"
-                    
                 },
                 {
                 
                    "id":2,
                     "title":"DNA",
                     "video_url": "https://www.youtube.com/watch?v=NLZRYQMLDW4"
-                    
                 }, 
                 {
                 
                     "id":3,
                      "title":"Alright",
                      "video_url": "https://www.youtube.com/watch?v=Z-48u_uWMHY&pp=ygUWYWxyaWdodCBrZW5kcmljayBsYW1hcg%3D%3D"
-                    
                  }
             ]
         },
@@ -102,21 +94,18 @@
                     "id":1,
                     "title": "We found love",
                     "video_url": "https://www.youtube.com/watch?v=tg00YEETFzg&pp=ygUNd2UgZm91bmQgbG92ZQ%3D%3D"
-                    
                 },
                 {
                 
                    "id":2,
                     "title":"Diamonds",
                     "video_url": "https://www.youtube.com/watch?v=lWA2pjMjpBs&pp=ygUIZGlhbW9uZHM%3D"
-                   
                 }, 
                 {
                 
                     "id":3,
                      "title":"Umbrella",
                      "video_url": "https://www.youtube.com/watch?v=CvBfHwUxHIk&pp=ygUQdW1icmVsbGEgcmloYW5uYQ%3D%3D"
-                     
                  }
             ]
         },
@@ -132,21 +121,18 @@
                     "id":1,
                     "title":"Blinding lights",
                     "video_url": "https://www.youtube.com/watch?v=4NRXx6U8ABQ&pp=ygUaYmxpbmRpbmcgbGlnaHRzIHRoZSB3ZWVrbmQ%3D"
-                   
                 },
                 {
                 
                    "id":2,
                     "title":"Save your tears",
                     "video_url": "https://www.youtube.com/watch?v=XXYlFuWEuKI&pp=ygUac2F2ZSB5b3VyIHRlYXJzIHRoZSB3ZWVrbmQ%3D"
-                    
                 }, 
                 {
                 
                     "id":3,
                      "title":"Starboy",
                      "video_url": "https://www.youtube.com/watch?v=34Na4j8AVgA&pp=ygUSc3RhcmJveSB0aGUgd2Vla25k"
-                     
                  }
             ]
         },
@@ -162,21 +148,18 @@
                     "id":1,
                     "title":"Under the influence",
                     "video_url": "https://www.youtube.com/watch?v=pfxyk1glEq4&pp=ygUfdW5kZXIgdGhlIGluZmx1ZW5jZSBjaHJpcyBicm93bg%3D%3D"
-                    
                 },
                 {
                 
                    "id":2,
                     "title":"Forever",
                     "video_url": "https://www.youtube.com/watch?v=5sMKX22BHeE&pp=ygUTZm9yZXZlciBjaHJpcyBicm93bg%3D%3D"
-                    
                 }, 
                 {
                 
                     "id":3,
                      "title":"With You",
                      "video_url": "https://www.youtube.com/watch?v=nmjdaBaZe8Y&pp=ygUUd2l0aCB5b3UgY2hyaXMgYnJvd24%3D"
-                    
                  }
             ]
         },
@@ -192,21 +175,18 @@
                     "id":1,
                     "title":"Temperature",
                     "video_url": "https://www.youtube.com/watch?v=dW2MmuA1nI4&pp=ygUVdGVtcGVyYXR1cmUgc2VhbiBwYXVs"
-                    
                 },
                 {
                 
                    "id":2,
                     "title":"Get busy",
                     "video_url": "https://www.youtube.com/watch?v=oPQ3o14ksaM&pp=ygUSZ2V0IGJ1c3kgc2VhbiBwYXVs0gcJCb0Ag7Wk3p_U"
-                    
                 }, 
                 {
                 
                     "id":3,
                      "title":"She doen't mind",
                      "video_url": "https://www.youtube.com/watch?v=SbUBMklQSVU&pp=ygUgc2VhbiBwYXVsIHNoZSBkb2VzbnQgbWluZCBseXJpY3M%3D"
-                    
                  }
             ]
         },
@@ -222,21 +202,18 @@
                     "id":1,
                     "title":"Hit and Run",
                     "video_url": "https://www.youtube.com/watch?v=rJwEphsNVH8&pp=ygULaGl0IGFuZCBydW4%3D"
-                   
                 },
                 {
                 
                    "id":2,
                     "title":"Rebel",
                     "video_url": "https://www.youtube.com/watch?v=Od4QdGa7I20&pp=ygUOcmViZWwgc2hlbnNlZWE%3D"
-                   
                 }, 
                 {
                 
                     "id":3,
                      "title":"Loodi",
                      "video_url": "https://www.youtube.com/watch?v=50jyn6_rLFA&pp=ygUObG9vZGkgc2hlbnNlZWE%3D"
-                     
                  }
             ]
         },
@@ -252,21 +229,18 @@
                     "id":1,
                     "title":"Fever",
                     "video_url": "https://www.youtube.com/watch?v=Yw-8dD_6MmY&pp=ygURZmV2ZXIgdnlieiBrYXJ0ZWw%3D"
-                   
                 },
                 {
                 
                    "id":2,
                     "title":"Summertime",
                     "video_url": "https://www.youtube.com/watch?v=CITU4KH93aU&pp=ygUXc3VtbWVyIHRpbWUgdnlieiBrYXJ0ZWw%3D"
-                    
                 }, 
                 {
                 
                     "id":3,
                      "title":"Wine to the top",
                      "video_url": "https://www.youtube.com/watch?v=uxq-S07Rc9U&pp=ygUid2luZSB0byB0aGUgdG9wIHZ5Ynoga2FydGVsIGx5cmljcw%3D%3D"
-                    
                  }
             ]
         }

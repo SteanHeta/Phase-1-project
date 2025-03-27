@@ -93,7 +93,6 @@ function saveSong(title, audioUrl, videoUrl) {
     if (!savedSongs.some(song => song.title === title && song.audioUrl === audioUrl)) {
         savedSongs.push({
             title: title,
-            audioUrl: audioUrl,
             videoUrl: videoUrl,
             savedAt: new Date().toISOString()
         });
@@ -122,9 +121,6 @@ function loadArtistSection(artists) {
             <li class="song-item">
                 <span class="song-title">${song.title}</span>
                 <div class="song-controls">
-                    <button class="play-audio" onclick="playAudio('${song.audio_url}')">
-                        <i class="fas fa-music"></i> Play Audio
-                    </button>
                     <button class="play-video" onclick="playVideo('${song.video_url}')">
                         <i class="fas fa-play"></i> Play Video
                     </button>
