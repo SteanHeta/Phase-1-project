@@ -88,9 +88,10 @@ function savePlayingSong() {
 }
 
 function playSong(videoUrl, title) {
-    if (currentAudio) {
-        currentAudio.pause();
-        currentAudio = null;
+    let embedUrl = videoUrl;
+    if (videoUrl.includes('youtube.com/watch')) {
+        const videoId = videoUrl.split('v=')[1];
+        embedUrl = `https://www.youtube.com/embed/${videoId}`;
     }
 
 const nowPlayingElement = document.getElementById("nowPlaying");
@@ -98,12 +99,16 @@ const nowPlayingElement = document.getElementById("nowPlaying");
         nowPlayingElement.innerHTML = `
             <p>Now Playing: <strong>${title}</strong></p>
             <div class="player-controls">
-                <button onclick="window.open('${videoUrl}', '_blank')">
-                    Watch Video <i class="fas fa-external-link-alt"></i>
+                <button onclick="window.open('${embedUrl}', '_blank')">
+                 <i class="fas fa-external-link-alt"></i>  Watch Video 
                 </button>
-                <button onclick="saveSong('${title.replace(/'/g, "\\'")}', '${videoUrl}')">
-                    Save Song <i class="fas fa-heart"></i>
-                </button>
+               <button class="save-btn" onclick="saveSong('${escapeString(title)}', '${videoUrl}')">
+                        <i class="fas fa-heart"></i> Save
+                    </button>
+                </div>
+                <iframe width="560" height="315" src="${embedUrl}" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
             </div>
         `;
     }
@@ -183,10 +188,10 @@ function loadArtistSection(artists) {
             <li class="song-item">
                 <span class="song-title">${song.title}</span>
                 <div class="song-controls">
-                    <button class="play-btn" onclick="playSong('${song.video_url}', '${song.title}')">
+                    <button class="play-btn" onclick="playSong('${song.video_url}', '${escapeString(song.title)}')">
                         <i class="fas fa-play"></i>
                     </button>
-                    <button class="save-btn" onclick="saveSong('${song.title.replace(/'/g, "\\'")}', '${song.video_url}')">
+                    <button class="save-btn" onclick="saveSong('${escapeString(song.title)}', '${song.video_url})'">
                         <i class="fas fa-heart"></i>
                     </button>
                 </div>

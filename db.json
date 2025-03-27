@@ -11,21 +11,21 @@
                 {
                     "id":1,
                     "title":"Gin and Juice",
-                    "video_url": "https://www.youtube.com/watch?v=fWCZse1iwE0"
+                    "video_url": "https://www.youtube.com/embed/fWCZse1iwE0"
 
                 },
                 {
                 
                    "id":2,
                     "title":"Drop it like its hot",
-                    "video_url": "https://www.youtube.com/watch?v=GtUVQei3nX4"
+                    "video_url": "https://www.youtube.com/embed/GtUVQei3nX4"
 
                 }, 
                 {
                 
                     "id":3,
                      "title":"Who am i",
-                     "video_url": "https://www.youtube.com/watch?v=2soGJXQAQec"
+                     "video_url": "https://www.youtube.com/embed/2soGJXQAQec"
                      
                  }
             ]
@@ -41,21 +41,21 @@
                 {
                     "id":1,
                     "title":"God's plan",
-                    "video_url": "https://www.youtube.com/watch?v=xpVfcZ0ZcFM"
+                    "video_url": "https://www.youtube.com/embed/xpVfcZ0ZcFM"
                     
                 },
                 {
                 
                    "id":2,
                     "title":"One dance",
-                    "video_url": "https://www.youtube.com/watch?v=qL7zrWcv6XY"
+                    "video_url": "https://www.youtube.com/embed/qL7zrWcv6XY"
                     
                 }, 
                 {
                 
                     "id":3,
                      "title":"Hotline bling",
-                     "video_url": "https://www.youtube.com/watch?v=uxpDa-c-4Mc"
+                     "video_url": "https://www.youtube.com/embed/uxpDa-c-4Mc"
                     
                  }
             ]
