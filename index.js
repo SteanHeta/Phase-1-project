@@ -124,7 +124,7 @@ function loadArtistSection(artists) {
                     <button class="play-video" onclick="playVideo('${song.video_url}')">
                         <i class="fas fa-play"></i> Play Video
                     </button>
-                    <button class="save-song" onclick="saveSong('${escapeString(song.title)}', '${song.audio_url}', '${song.video_url}')">
+                    <button class="save-song" onclick="saveSong('${escapeString(song.title)}', '${song.video_url}')">
                         <i class="fas fa-bookmark"></i> Save
                     </button>
                 </div>
@@ -146,9 +146,6 @@ function loadSavedSongs() {
         <li class="song-item">
             <span class="song-title">${song.title}</span>
             <div class="song-controls">
-                <button class="play-audio" onclick="playAudio('${song.audioUrl}')">
-                    <i class="fas fa-music"></i> Play
-                </button>
                 <button onclick="removeSavedSong(${index})">
                     <i class="fas fa-trash"></i> Remove
                 </button>
