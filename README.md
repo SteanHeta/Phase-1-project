@@ -22,5 +22,7 @@ To use the application, follow these steps:
 - CSS: used for styling the web application and enhancing its beauty
 - JavaScript: used for the functionality of the web application and enhance user interactivity
 
+## Blog link:https://medium.com/@stean5973/innovative-technologies-57aa95c1f241
+
 ## Licesnse
 MIT License © 2024 [Stean Ngugi]
