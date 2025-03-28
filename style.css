@@ -81,7 +81,7 @@ main {
     display: inline-block;
     background: #f0f0f0;
     padding: 3px 10px;
-    border-radius: 20px;
+    border-radius: 50%;
     font-size: 0.8rem;
     margin-right: 10px;
 }
@@ -157,15 +157,17 @@ main {
     gap: 15px;
     overflow-x: auto;
     padding: 15px 0;
+    border: 2px solid green;
 }
 
 .ranking-item {
     min-width: 150px;
     background: white;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 50%;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
 .saved-songs {
     background: white;
     padding: 20px;
